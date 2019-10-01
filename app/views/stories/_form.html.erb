@@ -1,0 +1,14 @@
+<%= form_for(story) do |form| %>
+  <div class="field">
+    <%= form.label :title, '標題' %>
+    <%= form.text_field :title, class: 'input is-primary is-medium' %> </br>
+  </div>
+  <div class="field">
+    <%= form.label :content, '內文' %>
+    <%= form.text_area :content, rows: 10, class: 'textarea is-primary is-medium' %>
+  </div>
+  <div class="field">
+    <%= form.submit '儲存草稿', class: 'button is-medium' %>
+    <%= form.submit '發佈文章', class: 'button is-primary is-medium' %>    
+  </div>
+<% end %>
