@@ -1,9 +1,8 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://tingtinghsu.github.io/">
+  <%= link_to root_path, class: 'navbar-item' do %>
       <img src="https://raw.githubusercontent.com/tingtinghsu/blog/gh-pages/public/favicon.ico" width="30" height="30">
-    </a>
-
+  <% end %>
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -32,15 +31,18 @@
                   <%= current_user.email %>
               </a>
       
-              <div class="navbar-dropdown">
-                  <%= link_to "個人資料", edit_user_registration_path, class: 'navbar-item is-primary', method: 'get'%>                
+              <div class="navbar-dropdown">              
                 <a class="navbar-item">
-
+                  <%= link_to "+ 新增故事", new_story_path, class: 'navbar-item' %>
                 </a>
+                <a class="navbar-item">
+                  <%= link_to "故事列表", stories_path, class: 'navbar-item' %>                
+                </a>                                
+                <hr class="navbar-divider">
+                  <%= link_to "個人資料", edit_user_registration_path, class: 'navbar-item is-primary', method: 'get'%>  
                 <a class="navbar-item">
                   聯絡我們
                 </a>
-                <hr class="navbar-divider">
                   <%= link_to "登出", destroy_user_session_path, class: 'navbar-item is-danger is-light', method: 'delete', data: {confirm: '是否確定登出?!'} %>         
               </div>
             </div>
