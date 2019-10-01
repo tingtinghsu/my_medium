@@ -1,0 +1,6 @@
+2019-10-01 11:15:03.855 JST [97017] LOG:  listening on IPv6 address "::1", port 5432
+2019-10-01 11:15:03.855 JST [97017] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-10-01 11:15:03.856 JST [97017] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-10-01 11:15:03.877 JST [97018] LOG:  database system was shut down at 2019-10-01 11:14:04 JST
+2019-10-01 11:15:03.895 JST [97017] LOG:  database system is ready to accept connections
+2019-10-01 11:15:48.790 JST [97067] FATAL:  database "my_medium_development" does not exist
