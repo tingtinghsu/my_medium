@@ -47,12 +47,15 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up 註冊</strong>
+          <% if user_signed_in? %>
+          <%= current_user.email %>，你好
+          <%= link_to "個人資料", edit_user_registration_path, class: 'button is-primary', method: 'get'%>          
+          <%= link_to "登出", destroy_user_session_path, class: 'button is-danger is-light', method: 'delete', data: {confirm: '是否確定登出?!'} %>
           </a>
-          <a class="button is-light">
-            Log in 登入
-          </a>
+          <% else %>
+            <%= link_to "註冊", new_user_registration_path, class: 'button is-primary', method: 'get'%>
+            <%= link_to "登入", new_user_session_path, class: 'button is-light', method: 'get'%>
+          <% end %>
         </div>
       </div>
     </div>
