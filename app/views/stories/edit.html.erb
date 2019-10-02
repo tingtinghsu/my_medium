@@ -1,2 +1,8 @@
 <h1 class="title">編輯故事</h1>
+<% if flash[:notice].present? %>
+  <div class="notification is-warning">
+    <button class="delete"></button>
+    <%=flash[:notice]%>
+  </div>
+<% end %>
 <%= render 'form', story: @story %>
