@@ -3,6 +3,17 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+
+  <div class="field">
+    <div class="control">
+        <%= f.label :username, '使用者帳號' %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: 'input' %>    
+    </div>
+    <p class="help">
+      例:tingtinghsu
+    </p>
+  </div>
+  
   <div class="field">
   <div class="control">
       <%= f.label :email %><br />

@@ -1,2 +1,9 @@
 
 <h1 class="title"">這是一個向Medium致敬的rails專案。</h1>
+
+<% if flash[:notice].present? %>
+  <div class="notification is-warning">
+    <button class="actions"></button>
+    <%=flash[:notice]%>
+  </div>
+<% end %>

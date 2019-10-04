@@ -5,18 +5,37 @@
 
   <div class="field">
     <div class="control">
+        <%= f.label :username, '使用者帳號' %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: 'input' %>    
+    </div>
+    <p class="help">
+      例:tingtinghsu
+    </p>
+  </div>
+
+  <div class="field">
+    <div class="control">
+        <%= f.label :intro, '個人簡介' %><br />
+        <%= f.text_area :intro, autocomplete: "intro", class: 'textarea', rows: 5 %>    
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>    
+        <%= f.email_field :email, autocomplete: "email", class: 'input' %>    
     </div>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+<hr>
+<div class="title">修改密碼 </div>
+<i>(如果不想修改密碼，以下請保持空白)</i>
   <div class="field">
     <div class="control">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :password, '新密碼' %> <i><br />
       <%= f.password_field :password, autocomplete: "new-password", class: 'input' %>
       <% if @minimum_password_length %>
         <br />
@@ -25,27 +44,17 @@
     </div>
   </div>
 
+
   <div class="field">
     <div class="control">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation, '再次確認新密碼' %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input' %>
     </div>
   </div>
 
-  <div class="field">
-    <div class="control">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password", class: 'input' %>
-    </div>
-  </div>
-
   <div class="actions">
-    <%= f.submit "Update", class: 'button is-primary' %>
+    <%= f.submit "Update", class: 'button is-primary is-medium' %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
