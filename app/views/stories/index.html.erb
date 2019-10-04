@@ -1,4 +1,4 @@
-<h1 class="title">故事列表</h1>
+<h1 class="title">我的故事</h1>
 <hr>
 <% if flash[:notice].present? %>
   <div class="notification is-warning">
@@ -9,10 +9,10 @@
 <% @stories.each do |story| %>
 
   <div class="content">
-    <h2 class="title">
-      <%= story.title %>
+    <h3 class="title">
+      <%= link_to story.title, edit_story_path(story), class: 'has-text-grey-darker' %>
       <%= content_tag :span, '已發佈', class: 'tag is-primary' if story.published? %>
-    </h2>
+    </h3>
     <p>
       <%=story.content %>
     </p>
